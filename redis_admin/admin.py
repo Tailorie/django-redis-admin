@@ -70,10 +70,7 @@ class Queryset:
             error = ('%r is not supported yet, please file a bug report on '
                      'https://github.com/WoLpH/redis_admin/issues/') % filter
 
-            # Not sure when args are ever a thing so we don't support it yet
-            assert not args, error
-
-            for key, value in kwargs.items():
+            for key, value in args:
                 # Can't have multiple filters with redis
                 assert not query, error
 
